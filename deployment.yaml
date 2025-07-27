@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mycalaction
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mycalaction
+  template:
+    metadata:
+      labels:
+        app: mycalaction
+    spec:
+      containers:
+        - name: mycalaction
+          image: amirdirin/mycalaction:latest
+          ports:
+            - containerPort: 8080
