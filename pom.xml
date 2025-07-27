@@ -29,6 +29,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version> <!-- ✅ Explicit version added -->
+                <configuration>
+                    <source>1.8</source>  <!-- or 11 / 17 depending on your Java version -->
+                    <target>1.8</target>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -36,7 +41,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.4.2</version>
                 <configuration>
-                    <archive>
+                        <archive>
                         <manifest>
                             <mainClass>com.example.calculator.Calculator</mainClass>  <!-- Your main class full name -->
                         </manifest>
